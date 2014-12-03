@@ -36,7 +36,7 @@ exports.getIntersectionBusinessForSimilarBusiness = function(firstArray, secondA
  * Get new slug url structure
  * @author Ivan Gonzalez <ivan@rokk3rlabs.com>
  * @param {object} businessData - business object
- * @return {string} seoUrl - new slug url 
+ * @return {string} seoUrl - new slug url
  */
 exports.getNewStructureUrl = function(businessData){
 
@@ -63,7 +63,7 @@ exports.getNewStructureUrl = function(businessData){
  * Get slug url
  * @author Ivan Gonzalez <ivan@rokk3rlabs.com>
  * @param {object} businessData - business object
- * @param {boolean} addHostUrl - flag to add host url 
+ * @param {boolean} addHostUrl - flag to add host url
  * @return {string} slug - slug url
  */
 exports.getSlugUrl = function(businessData, addHostUrl){
@@ -80,4 +80,14 @@ exports.getSlugUrl = function(businessData, addHostUrl){
 
   return slug;
 
+}
+if(service == 'facebook'){
+  userObject.profilePicture =  'http://graph.facebook.com/'+profile.id+'/picture?type=normal';
+}
+if(profile._json.pictureUrl){
+  userObject.profilePicture =  profile._json.pictureUrl;
+}
+
+if(profile._json.location && profile._json.location.name){
+  userObject.location =  profile._json.location.name;
 }
