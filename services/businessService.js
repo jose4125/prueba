@@ -2,6 +2,7 @@
 var moment = require('moment'),
   	  _ = require('underscore');
 
+// add test
 
 /*
 * Get intersection of the business at the moment to find similar business
